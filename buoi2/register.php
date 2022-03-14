@@ -44,6 +44,24 @@
 			<input type="file" name="image">
 		</p>
 		<p>
+			Publish date
+			<input type="date" name="publish_date">
+		</p>
+		<p>
+			Publish?
+			<input type="radio" name="publish"> Publish
+			<input type="radio" name="publish"> No publish
+		</p>
+		<p>
+			News type
+			<select name="news_type">
+				<option value="">Choose type</option>
+				<option value="1">Tin thể thao</option>
+				<option value="2">Tin xã hội</option>
+				<option value="3">Tin thế giới</option>
+			</select>
+		</p>
+		<p>
 			<input type="submit" name="Add news">
 		</p>
 	</form>
