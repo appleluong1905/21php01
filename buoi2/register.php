@@ -8,6 +8,7 @@
 	$errTitle = '';
 	$errDescription = '';
 	$errContent = '';
+	$errDate = '';
 		if (isset($_POST['title'])) {
 			if ($_POST['title'] == '') {
 				$errTitle = 'Please input title';
@@ -18,6 +19,9 @@
 			if ($_POST['content'] == '') {
 				$errContent = 'Please input content';
 			}
+			if ($_POST['publish_date'] == '') {
+				$errDate = 'Please input publish date';
+			}
 		} else {
 			echo "Chưa submit";
 		}
@@ -26,7 +30,7 @@
 	<form action="#" method="POST">
 		<p>
 			Title
-			<input type="text" name="title" value="<?php echo $_POST['title']?>">
+			<input type="text" name="title" value="<?php echo isset($_POST['title'])?$_POST['title']:'';?>">
 			<?php echo $errTitle;?>
 		</p>
 		<p>
@@ -45,7 +49,8 @@
 		</p>
 		<p>
 			Publish date
-			<input type="date" name="publish_date">
+			<input type="date" name="publish_date" value="<?php echo $_POST['publish_date']?>">
+			<?php echo $errDate;?>
 		</p>
 		<p>
 			Publish?
