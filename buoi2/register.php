@@ -22,12 +22,14 @@
 			if ($_POST['publish_date'] == '') {
 				$errDate = 'Please input publish date';
 			}
+			//var_dump($_FILES['image']['tmp_name']); //để debug giống console.log() bên javascript
+			move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/'.$_FILES['image']['name']);
 		} else {
 			echo "Chưa submit";
 		}
 	?>
 	<h1>Add news</h1>
-	<form action="#" method="POST">
+	<form action="#" method="POST" enctype='multipart/form-data'>
 		<p>
 			Title
 			<input type="text" name="title" value="<?php echo isset($_POST['title'])?$_POST['title']:'';?>">
